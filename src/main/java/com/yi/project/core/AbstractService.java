@@ -3,7 +3,6 @@ package com.yi.project.core;
 
 import org.apache.ibatis.exceptions.TooManyResultsException;
 import org.springframework.beans.factory.annotation.Autowired;
-import tk.mybatis.mapper.entity.Condition;
 import tk.mybatis.mapper.entity.Example;
 
 import java.lang.reflect.Field;
@@ -51,8 +50,18 @@ public abstract class AbstractService<T> implements Service<T> {
     }
 
     @Override
+    public void deleteByExample(Example.Criteria criteria) {
+        mapper.deleteByExample(criteria);
+    }
+
+    @Override
     public void update(T model) {
         mapper.updateByPrimaryKeySelective(model);
+    }
+
+    @Override
+    public void updateByExampleSelective(T model, Example.Criteria criteria) {
+        mapper.updateByExampleSelective(model, criteria);
     }
 
     @Override

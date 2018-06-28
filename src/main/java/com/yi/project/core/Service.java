@@ -36,10 +36,23 @@ public interface Service<T> {
     void deleteByIds(String ids);
 
     /**
+     * 根据条件删除
+     * @param criteria Example
+     */
+    void deleteByExample(Example.Criteria criteria);
+
+    /**
      * 更新
      * @param model
      */
     void update(T model);
+
+    /**
+     * 根据条件更新
+     * @param model JavaBean对象
+     * @param criteria Example
+     */
+    void updateByExampleSelective(T model, Example.Criteria criteria);
 
     /**
      * 通过ID查找
