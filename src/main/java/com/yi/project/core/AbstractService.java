@@ -50,8 +50,18 @@ public abstract class AbstractService<T> implements Service<T> {
     }
 
     @Override
+    public void deleteByExample(Condition condition) {
+        mapper.deleteByExample(condition);
+    }
+
+    @Override
     public void update(T model) {
         mapper.updateByPrimaryKeySelective(model);
+    }
+
+    @Override
+    public void updateByExampleSelective(T model, Condition condition) {
+        mapper.updateByExampleSelective(model, condition);
     }
 
     @Override

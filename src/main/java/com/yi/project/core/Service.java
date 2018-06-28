@@ -36,10 +36,23 @@ public interface Service<T> {
     void deleteByIds(String ids);
 
     /**
+     * 根据条件删除
+     * @param condition Example
+     */
+    void deleteByExample(Condition condition);
+
+    /**
      * 更新
      * @param model
      */
     void update(T model);
+
+    /**
+     * 根据条件更新
+     * @param model JavaBean对象
+     * @param condition Example
+     */
+    void updateByExampleSelective(T model, Condition condition);
 
     /**
      * 通过ID查找
@@ -66,14 +79,14 @@ public interface Service<T> {
 
     /**
      * 根据条件查找
-     * @param condition
+     * @param condition Example
      * @return
      */
     List<T> findByCondition(Condition condition);
 
     /**
      * 自定义查询
-     * @param condition
+     * @param condition Example
      * @return
      */
     List<T> findByExample(Condition condition);
