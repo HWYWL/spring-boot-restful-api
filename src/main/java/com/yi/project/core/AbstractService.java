@@ -4,6 +4,7 @@ package com.yi.project.core;
 import org.apache.ibatis.exceptions.TooManyResultsException;
 import org.springframework.beans.factory.annotation.Autowired;
 import tk.mybatis.mapper.entity.Condition;
+import tk.mybatis.mapper.entity.Example;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.ParameterizedType;
@@ -78,13 +79,13 @@ public abstract class AbstractService<T> implements Service<T> {
     }
 
     @Override
-    public List<T> findByCondition(Condition condition) {
-        return mapper.selectByCondition(condition);
+    public List<T> findByCondition(Example.Criteria criteria) {
+        return mapper.selectByCondition(criteria);
     }
 
     @Override
-    public List<T> findByExample(Condition condition) {
-        return mapper.selectByExample(condition);
+    public List<T> findByExample(Example.Criteria criteria) {
+        return mapper.selectByExample(criteria);
     }
 
     @Override

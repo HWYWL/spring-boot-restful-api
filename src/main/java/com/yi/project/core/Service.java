@@ -1,7 +1,7 @@
 package com.yi.project.core;
 
 import org.apache.ibatis.exceptions.TooManyResultsException;
-import tk.mybatis.mapper.entity.Condition;
+import tk.mybatis.mapper.entity.Example;
 
 import java.util.List;
 
@@ -66,17 +66,17 @@ public interface Service<T> {
 
     /**
      * 根据条件查找
-     * @param condition
+     * @param criteria
      * @return
      */
-    List<T> findByCondition(Condition condition);
+    List<T> findByCondition(Example.Criteria criteria);
 
     /**
      * 自定义查询
-     * @param condition
+     * @param criteria
      * @return
      */
-    List<T> findByExample(Condition condition);
+    List<T> findByExample(Example.Criteria criteria);
 
     /**
      * 获取所有数据
