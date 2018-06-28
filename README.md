@@ -30,7 +30,7 @@ Mybatis配置加载 MybatisConfigurer.java
 ![](https://i.imgur.com/Q5GqPRB.jpg)
 
 properties配置文件 application.properties
-![](https://i.imgur.com/kCu0Bus.jpg)
+![](https://i.imgur.com/w4cpSWM.jpg)
 
 ### 开发建议
 - 表名，应使用小写，多个单词使用下划线拼接
